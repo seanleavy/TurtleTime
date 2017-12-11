@@ -15,11 +15,11 @@ public enum Direction {
         return Direction.values()[rnd.nextInt(4)];
     }
 
-    public Direction rotateLeft() {
-        return values()[(ordinal() - 1) % 4];
+    public Direction  rotateLeft() {
+        return values()[(ordinal() + 1) % 4];
     }
 
     public Direction rotateRight() {
-        return values()[(ordinal() + 1) % 4];
+        return values()[(ordinal() + 3) % 4];
     }
 }

@@ -1,5 +1,6 @@
 package com.company.models;
 
+import com.company.data.PositionImpl;
 import com.company.interfaces.Actor;
 import com.company.interfaces.Position;
 import com.company.interfaces.Move;
@@ -17,7 +18,7 @@ public class Turtle implements Actor, Move, Rotate {
     public void move(String move) {
 
         switch (move) {
-            case "m":
+            case "move":
                 switch (position.getDirection()) {
                     case NORTH:
                         position.setY(1);
@@ -36,21 +37,22 @@ public class Turtle implements Actor, Move, Rotate {
                         System.out.println("Moved West one step");
                         break;
                 }
-            case "rr":
-                rotateClockwise();
-                System.out.println("Rotated 90 deg right");
+                System.out.println("Position: " + position.getX() + "," + position.getY());
                 break;
-            case "rl":
+            case "rotateRight":
+                rotateClockwise();
+                System.out.println("Rotated!. Now facing " + ((PositionImpl) this.getPosition()).getDirection());
+                break;
+            case "rotateLeft":
                 rotateAntiClockwise();
-                System.out.println("Rotated 90 deg left");
+                System.out.println("Rotated! Now facing " + ((PositionImpl) this.getPosition()).getDirection());
                 break;
         }
     }
 
     @Override
     public void rotateClockwise() {
-        this.position.setDirection(this.position.getDirection().rotateRight());
-
+        this.position.setDirection(position.getDirection().rotateRight());
     }
 
     @Override

@@ -15,21 +15,24 @@ public class GameConfigImpl implements GameConfig {
         Properties gameSettings = Configurator.readConfigFile(Configurator.gameSettingsFile);
         Properties moves = Configurator.readConfigFile(Configurator.moves);
 
-        int[] mazeSize = Arrays.asList(gameSettings.getProperty("size")
+        int[] mazeDimensions = Arrays.asList(gameSettings.getProperty("size")
                 .split(","))
                 .stream()
                 .map(String::trim)
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        Position startingPosition = new PositionImpl(gameSettings.getProperty("startX"),
-                gameSettings.getProperty("startY"),
+        // retrieve starting point
+        Position startingPosition = new PositionImpl(Integer.parseInt(gameSettings.getProperty("startX")),
+                Integer.parseInt(gameSettings.getProperty("startY")),
                 Direction.valueOf(gameSettings.getProperty("direction")));
-        Position exit = new PositionImpl(gameSettings.getProperty("exitX"), gameSettings.getProperty("exitY"));
+        //retrieve exit point
+        Position exit = new PositionImpl(Integer.parseInt(gameSettings.getProperty("exitX")), Integer.parseInt(gameSettings.getProperty("exitY")));
         String[] gameMoves = moves.getProperty("moves").split(",");
         List<Position> mines = getMinesAsList(gameSettings.getProperty("mines").split(";"));
 
-        config.put("mazeSize", mazeSize);
+        //add to config object
+        config.put("mazeDimensions", mazeDimensions);
         config.put("startingPosition", startingPosition);
         config.put("moves", gameMoves);
         config.put("exit", exit);

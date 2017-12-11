@@ -6,7 +6,7 @@ public interface Position<X, Y> {
     public X getX();
     public Y getY();
     public Direction getDirection();
-    public void setX(X x);
-    public void setY(Y y);
+    public void setX(int x);
+    public void setY(int y);
     public void setDirection(Direction d);
 }

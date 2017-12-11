@@ -7,16 +7,16 @@ import com.company.interfaces.Position;
  * PositionImpl data structure to store pairs
  */
 public class PositionImpl<X, Y> implements Position {
-    private X x;
-    private Y y;
+    private int x;
+    private int y;
     private Direction direction = Direction.randomDirection();
 
-    public PositionImpl(X x, Y y) {
+    public PositionImpl(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public PositionImpl(X x, Y y, Direction direction) {
+    public PositionImpl(int x, int y, Direction direction) {
         this.x = x;
         this.y = y;
         this.direction = direction;
@@ -39,13 +39,13 @@ public class PositionImpl<X, Y> implements Position {
     }
 
     @Override
-    public void setX(Object o) {
-        this.x = (X)o;
+    public void setX(int o) {
+        this.x = this.x + o;
     }
 
     @Override
-    public void setY(Object o) {
-        this.y = (Y)o;
+    public void setY(int o) {
+        this.y = this.y + o;
     }
 
     @Override
@@ -54,9 +54,10 @@ public class PositionImpl<X, Y> implements Position {
     }
 
 
+    //need to overrride to check the winning position
     @Override
     public boolean equals(Object obj) {
-        if(this == obj)
+        if(this.x == ((PositionImpl)obj).x && this.y == ((PositionImpl)obj).y)
             return true;
         else
             return false;
