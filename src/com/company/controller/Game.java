@@ -18,14 +18,11 @@ public class Game {
 
 
     private void gameLoop(HashMap config) {
-        Actor actor = new Turtle((Position) config.get("startingPosition"));
         //set starting position and direction for the turtle
-        ((Position)(actor.getPosition())).setX(config.get("startX"));
-        ((Position)(actor.getPosition())).setY(config.get("startY"));
-        ((Position)(actor.getPosition())).setDirection((Direction) config.get("direction"));
+        Actor actor = new Turtle((Position) config.get("startingPosition"));
 
         String[] moves = ((String[]) config.get("moves"));
-        int totalMoves = moves.length;
+        int totalMoves = 0;
         actor.setPosition((Position) config.get("startingPosition"));
 
         // Loop through the moves

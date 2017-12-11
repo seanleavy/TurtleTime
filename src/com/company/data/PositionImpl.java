@@ -1,4 +1,4 @@
-package com.company.dataStructures;
+package com.company.data;
 
 import com.company.enums.Direction;
 import com.company.interfaces.Position;

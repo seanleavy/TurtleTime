@@ -49,12 +49,13 @@ public class Turtle implements Actor, Move, Rotate {
 
     @Override
     public void rotateClockwise() {
-        this.position.getDirection().rotateRight();
+        this.position.setDirection(this.position.getDirection().rotateRight());
+
     }
 
     @Override
     public void rotateAntiClockwise() {
-        this.position.getDirection().rotateLeft();
+        this.position.setDirection(position.getDirection().rotateLeft());
     }
 
     @Override

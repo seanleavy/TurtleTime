@@ -7,8 +7,8 @@ import java.util.Properties;
 
 public class Configurator {
 
-    public static final String gameSettingsFile = "games-settings.properties";
-    public static final String moves = "moves.properties";
+    public static final String gameSettingsFile = "C:\\Users\\sean\\IdeaProjects\\Turtle\\src\\com\\company\\gameSettings.properties";
+    public static final String moves = "C:\\Users\\sean\\IdeaProjects\\Turtle\\src\\com\\company\\moves.properties";
 
     public static Properties readConfigFile(String file) {
         try {

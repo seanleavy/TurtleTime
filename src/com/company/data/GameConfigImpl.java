@@ -1,4 +1,4 @@
-package com.company.dataStructures;
+package com.company.data;
 
 import com.company.utils.Configurator;
 import com.company.enums.Direction;

@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.controller.Game;
-import com.company.dataStructures.GameConfigImpl;
+import com.company.data.GameConfigImpl;
 
 import java.util.HashMap;
 
